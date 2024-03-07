@@ -1,0 +1,101 @@
+//Matrix Wave form Travel
+#include <iostream>
+using namespace std;
+int main(){
+int m;
+cout<<"enter the row of matrix=";
+cin>>m;
+int n;
+cout<<"enter the column of matrix=";
+cin>>n;
+int ar[m][n];
+//taking input
+for(int i=0;i<m;i++){//i=rows
+        for(int j=0;j<n;j++){//j=column
+            cin>>ar[i][j];
+        }
+    }
+//wave print
+    for(int i=0;i<m;i++){//i=rows
+    if(i%2==0){//row is even
+        for(int j=0;j<n;j++){//j=column
+            cout<<ar[i][j]<<" ";
+        }
+        
+    }
+    else{
+        for(int j=n-1;j>=0;j--){//i=row is odd
+            cout<<ar[i][j]<<" ";
+        }
+    }
+    cout<<endl;
+}
+}
+
+
+//columnwise printing
+//  for(int j=0;j<n;j++){//i=rows
+//         for(int i=0;i<n;i++){//j=column
+//             cout<<ar[i][j]<<" ";
+//         }
+        
+//     }
+//}
+
+//multplicationonMatrix
+#include <iostream>
+using namespace std;
+int main(){
+int m;
+cout<<"enter the row1st matrix=";
+cin>>m;
+int n;
+cout<<"enter the column1st matrix=";
+cin>>n;
+int p;
+cout<<"enter the row2nd matrix=";
+cin>>p;
+int q;
+cout<<"enter the column2nd matrix=";
+cin>>q;
+if(n==p){
+cout<<"Enter th e1st matrix";
+int ar[m][n];
+//taking input
+for(int i=0;i<m;i++){//i=rows
+        for(int j=0;j<n;j++){//j=column
+            cin>>ar[i][j];
+        }
+    }
+    //cout<<"Enter the second matrix";
+     int br[p][q];
+     cout<<"Enter the second matrix";
+//taking input
+for(int i=0;i<p;i++){//i=rows
+        for(int j=0;j<q;j++){//j=column
+            cin>>br[i][j];
+        }
+    }
+    //resultant matrix 
+    int res[m][q];
+    for(int i=0;i<m;i++){
+        for(int j=0;j<q;j++){
+            res[i][j]=0;
+            //res[i][j]=a[i][0]b[0][j]+a[i][1]b[1][j]+a[i][2]b[2][j]
+            // k values = (n==p)
+            for(int k=0;k<n;k++){
+                res[i][j] +=ar[i][k]*br[k][j];
+            }
+        }
+    }
+    //printingmatrix
+    for(int i=0;i<m;i++){
+        for(int j=0;j<q;j++){
+            cout<<res[i][j]<<" ";}
+            cout<<endl;}
+}
+else{
+    cout<<"matrix not be multiplied";
+}
+
+}
